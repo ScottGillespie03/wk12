@@ -8,10 +8,10 @@ Tesla::Tesla(char model, int price) {
 }
 void Tesla::chargeBattery(int mins) {
   int i = 0;
-  while (batteryPercentage <= 100 && i < mins) {
-    for (i; i < mins; i++) {
-      batteryPercentage = batteryPercentage + 0.5;
-    }
+
+  while (batteryPercentage < 100 && i < mins) {
+    batteryPercentage = batteryPercentage + 0.5;
+    i++;
   }
 }
 void Tesla::set_batteryPercentage(float battP) { batteryPercentage = battP; }
@@ -30,12 +30,13 @@ void Tesla::drive(int kms) {
 
   if (currentBP == 0) {
     set_emissions(currentEm);
-    return;
   }
 
   if (newBatP < 0) {
     set_batteryPercentage(0);
-    set_emissions((74 * (currentBP * 5)) + currentEm);
+    int emiss = 74 * currentBP * 5;
+    int emissFinal = emiss + currentEm;
+    set_emissions(emissFinal);
   } else {
     set_batteryPercentage(newBatP);
     set_emissions(74 * (((currentBP - newBatP) * 5)) + currentEm);

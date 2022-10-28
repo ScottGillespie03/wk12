@@ -7,7 +7,7 @@ class Tesla : public Car {
  private:
   char _model;
   float batteryPercentage;
-  int nextVinNumber;
+  
 
  public:
   Tesla();
@@ -22,7 +22,6 @@ class Tesla : public Car {
 
   void drive(int kms);
 };
-
 static int nextVinNumber = 1000001;
 
 #endif
