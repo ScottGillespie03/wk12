@@ -1,9 +1,6 @@
 #include "Car.h"
 
-Car::Car(int _price) {
-  set_price(_price);
-  set_emissions(0);
-}
+Car::Car(int _price) { set_price(_price); }
 
 Car::Car() {}
 

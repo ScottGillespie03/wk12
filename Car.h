@@ -5,7 +5,7 @@ class Car {
  public:
   int price;
   int vinNumber;
-  int emissions;
+  int emissions = 0;
 
   Car(int _price);
   Car();
