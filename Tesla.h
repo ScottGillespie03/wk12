@@ -4,12 +4,10 @@
 #define TESLA_H
 
 class Tesla : public Car {
- private:
+ public:
   char _model;
   float batteryPercentage;
-  
 
- public:
   Tesla();
   Tesla(char model, int price);
   void chargeBattery(int mins);

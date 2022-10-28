@@ -2,12 +2,11 @@
 #define CAR_H
 
 class Car {
- private:
+ public:
   int price;
   int vinNumber;
   int emissions;
 
- public:
   Car(int _price);
   Car();
 
