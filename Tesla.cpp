@@ -7,7 +7,6 @@ Tesla::Tesla(char model, int price) {
   set_model(model);
   set_price(price);
   set_batteryPercentage(100);
-  nextVinNumber = nextVinNumber++;
 }
 void Tesla::chargeBattery(int mins) {
   int i = 0;
@@ -39,7 +38,7 @@ void Tesla::drive(int kms) {
     set_batteryPercentage(0);
     int emiss = 74 * currentBP * 5;
     int emissFinal = emiss + currentEm;
-     set_emissions(emissFinal);
+    set_emissions(emissFinal);
   } else {
     set_batteryPercentage(newBatP);
     set_emissions(74 * (((currentBP - newBatP) * 5)) + currentEm);

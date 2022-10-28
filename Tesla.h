@@ -20,6 +20,4 @@ class Tesla : public Car {
 
   void drive(int kms);
 };
-static int nextVinNumber = 1000001;
-
 #endif
