@@ -25,19 +25,17 @@ void Ford::drive(int kms) {
   float currentLOF = get_litresOfFuel();
   float newLOF = currentLOF - litreDrain;
 
-  int currentEm = get_emissions();
-
   if (currentLOF == 0) {
-    set_emissions(currentEm);
+    return;
   }
 
   if (newLOF < 0) {
     set_litresOfFuel(0);
     int emiss = 234 * currentLOF * 5;
-    int emissFinal = emiss + currentEm;
+    int emissFinal = emiss;
     set_emissions(emissFinal);
   } else {
     set_litresOfFuel(newLOF);
-    set_emissions(234 * (((currentLOF - newLOF) * 5)) + currentEm);
+    set_emissions(234 * (((currentLOF - newLOF) * 5)));
   }
 }
